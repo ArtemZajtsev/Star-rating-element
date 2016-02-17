@@ -1,0 +1,33 @@
+svg {
+  width: 2em;
+  height: 2em;
+  fill: white;
+  pointer-events: none;
+}
+
+.stars {
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: flex-end;
+}
+
+/*The ~ selector selects all sibling elements after itself(stars from right in view)
+flex-flow: row-reverse reverses elements so ~ selects stars from left
+*/
+.star.is-selected svg,
+.star.is-selected ~ .star svg {
+  fill: gold;
+}
+
+.star:hover svg,
+.star:hover ~ .star svg {
+  fill: gold;
+}
+
+#rated {
+  margin-top: 1em;
+}
+
+[dir="rtl"] {
+  direction: rtl;
+}
